@@ -1,7 +1,9 @@
 <template>
      <div>
-		 <tabbar></tabbar>
+		 <tabbar v-show="$store.state.isTabbarshow"></tabbar>
 		 <router-view></router-view>
+		 
+		 <musicplay v-show="$store.state.isTabbarshow"></musicplay>
 	 </div>
 </template>
 
@@ -12,13 +14,14 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Vant from 'vant'
 import 'vant/lib/index.css';
-
+import musicplay from './components/Musicplay.vue'
 Vue.use(Vant);
 Vue.use(ElementUI)
 
 export default {
      components:{
-		 tabbar
+		 tabbar,
+		 musicplay
 	 }
 }
 </script>
